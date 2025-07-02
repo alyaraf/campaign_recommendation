@@ -54,8 +54,3 @@ Preprocessing steps:
 - Categorical Encoding: `LabelEncoder`
 - Feature Scaling: `StandardScaler`
 - Missing label handling: Class balancing using data augmentation
-
----
-
-## 📁 Project Structure
-
