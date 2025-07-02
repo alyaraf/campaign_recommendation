@@ -1,53 +1,61 @@
-🧠 Customer Analytics & Campaign Prediction using XGBoost
-This project analyzes sales and customer data from a retail company to generate actionable business insights and predict future customer behavior using advanced machine learning techniques. The main goals are customer segmentation, product and geographic analysis, and campaign targeting using XGBoost models.
+# 🧠 Customer Analytics & Campaign Prediction using XGBoost
 
-🔍 Key Objectives
-Segment customers based on spending behavior using K-Means clustering.
+This project leverages machine learning and data analytics to generate customer insights and personalized campaign recommendations from retail sales data. It uses clustering, regression, and classification models to guide data-driven marketing strategies.
 
-Identify top-performing countries and products based on historical sales data.
+## 📌 Project Goals
 
-Analyze seasonal trends to uncover the best and worst quarters for sales.
+- Segment customers based on purchasing behavior
+- Identify high-value and high-frequency clients
+- Predict:
+  - Time to next purchase (regression)
+  - Preferred product line (classification)
+  - Preferred country (classification)
+- Recommend optimized campaign timing and targeting
 
-Predict customer behavior using XGBoost:
+---
 
-Next purchase timing (regression)
+## 🔍 Key Insights
 
-Preferred product line (classification)
+- **Top Countries**: Spain, France, Australia, UK, Italy
+- **Underperforming Countries**: Singapore, Belgium, Switzerland
+- **Top Product Lines**: Classic Cars, Vintage Cars, Motorcycles
+- **Underperforming Product Lines**: Planes, Ships, Trains
+- **Best Quarter**: Q4
+- **Weakest Quarter**: Q2
+- **High-value customers**: Clustered based on total spending, order frequency, and recency
 
-Preferred country (classification)
+---
 
-Generate data-driven marketing campaigns tailored to high-priority and high-value customers.
+## 📊 Visualizations
 
-🚀 Machine Learning Models
-XGBoost Regressor: Predicts the number of days until a customer's next purchase.
+Key visualizations include:
+- Customer clusters (KMeans)
+- Monthly and quarterly sales trends
+- Product and country performance
+- Campaign targeting breakdown (priority & value)
+  
+Visuals are saved as:
+- `purchase_timing_distribution.png`
+- `product_recommendations.png`
+- `country_recommendations.png`
+- `customer_segments.png`
 
-XGBoost Classifiers: Predict customers' likely product interests and target countries.
+---
 
-LabelEncoder + StandardScaler: Handle categorical and numerical preprocessing.
+## 🚀 Machine Learning Models
 
-Data Augmentation: Ensures all classification labels are represented during training.
+| Task                         | Model           |
+|------------------------------|-----------------|
+| Time to next purchase        | `XGBRegressor`  |
+| Predict preferred product    | `XGBClassifier` |
+| Predict preferred country    | `XGBClassifier` |
 
-📊 Insights Generated
-Identified high-value clusters of customers based on average order value and recency.
+Preprocessing steps:
+- Categorical Encoding: `LabelEncoder`
+- Feature Scaling: `StandardScaler`
+- Missing label handling: Class balancing using data augmentation
 
-Found USA, Spain, and France as the top-performing countries.
+---
 
-Highlighted Classic Cars and Vintage Cars as the most profitable product lines.
+## 📁 Project Structure
 
-Determined Q4 as the best-performing quarter, while Q2 is the weakest.
-
-Created personalized campaign strategies, optimized by predicted next purchase dates.
-
-📁 Outputs
-campaign_recommendations.csv: Targeted marketing recommendations.
-
-Trained models: Saved using joblib for reuse (next_purchase_model.pkl, etc.).
-
-Visualizations: Insights into cluster profiles, sales trends, and recommendations (saved as PNGs).
-
-🛠 Technologies Used
-Python, Pandas, NumPy, Matplotlib, Seaborn
-
-Scikit-learn, XGBoost
-
-Joblib (for model persistence)
